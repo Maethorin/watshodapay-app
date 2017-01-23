@@ -1,0 +1,212 @@
+ion-content {
+  &.login-form-page {
+    background-color: $brand-primary;
+
+    .header-img {
+      text-align: center;
+      padding-top: 40px;
+      padding-bottom: 30px;
+      @media (min-width: $min-portrait-tablet-width) and (orientation: portrait), (min-width: $ionic-large-modal-width) and (orientation: landscape) {
+        padding-bottom: 55px;
+      }
+      img {
+        margin-bottom: -10px;
+        width: 302px;
+        @media (min-width: $min-portrait-tablet-width) and (orientation: portrait), (min-width: $ionic-large-modal-width) and (orientation: landscape) {
+          width: 500px;
+        }
+      }
+    }
+
+    .create-account {
+      text-align: center;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-top: 30px;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    .forgot-password {
+      text-align: center;
+      a {
+        color: #fff;
+      }
+    }
+
+    .login-inset {
+      margin: 20px 55px;
+      margin-bottom: 10px;
+      background-color: $brand-primary;
+      .button {
+        background-color: white;
+        color: $brand-primary;
+        font-size: 17px;
+        font-weight: 600;
+        border-radius: 2px;
+        &.button-block {
+          width: 100%;
+        }
+      }
+      @media (min-width: $min-portrait-tablet-width) and (orientation: portrait), (min-width: $ionic-large-modal-width) and (orientation: landscape) {
+        width: 500px;
+        margin: 0 auto;
+      }
+    }
+    .list {
+      .item {
+        background-color: $brand-primary;
+        margin-bottom: 10px;
+        border: 1px solid white;
+
+        input {
+          color: #fff;
+          padding-right: 15px;
+          font-size: 15px;
+        }
+        ::-webkit-input-placeholder {
+           color: #fff;
+           font-size: 15px;
+           text-align: center;
+           font-weight: 600;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+           color: #fff;
+           font-size: 15px;
+           text-align: center;
+           font-weight: 600;
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+           color: #fff;
+           font-size: 15px;
+           text-align: center;
+           font-weight: 600;
+        }
+
+        :-ms-input-placeholder {
+           color: #fff;
+           font-size: 15px;
+           text-align: center;
+           font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &.form-user-content {
+    .list {
+      .label {
+        padding-left: 10px;
+      }
+      label {
+
+        input, textarea {
+          width: 95%;
+          margin: 0 auto;
+          border-bottom: 1px solid #EDEDED;
+          margin-bottom: 40px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          &.ng-dirty, &.ng-touched {
+            margin-bottom: 0;
+
+            &.ng-valid {
+              margin-bottom: 40px;
+            }
+            &.ng-valid ~ span.message.error {
+              display: none;
+            }
+
+            &.ng-invalid {
+              margin-bottom: 0;
+              border-bottom: 1px solid $dark-red;
+            }
+            &.ng-invalid ~ span.message.error {
+              display: inline-flex;
+              color: $dark-red;
+              font-size: 10px;
+              margin-bottom: 22px;
+              padding-left: 10px;
+            }
+
+            &.ng-invalid ~ .label {
+              color: $dark-red;
+            }
+
+          }
+        }
+
+        input + span.message.error, textarea + span.message.error, div.numbers + span.message.error {
+          display: none;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .list {
+    .label {
+      padding-left: 15px;
+      color: #8D4120;
+      font-size: 15px;
+    }
+    .item {
+      border: none;
+      border-bottom: 2px solid #EDEDED;
+      margin-bottom: 10px;
+      padding-top: 2px;
+      i.icon.error {
+        color: $dark-red;
+      }
+    }
+  }
+
+  .title {
+    text-align: center;
+    color: $light-brown;
+    font-size: 18px;
+    background-color: $light-cream;
+    padding: 5px 0;
+    text-transform: uppercase;
+    .message {
+      font-size: 10px;
+      text-align: center;
+      display: block;
+    }
+  }
+}
+
+.form-user-view {
+  .bar-footer {
+    background-color: $brand-primary;
+    text-align: center;
+    background-image: none;
+    border-color: $brand-primary;
+
+    #triangle-bottomright {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-bottom: 10px solid #fff;
+      border-left: 10px solid transparent;
+    }
+
+    .company-footer {
+      color: #fff;
+      .company-name {
+        font-weight: 700;
+        margin-right: 5px;
+      }
+
+      .company-slogan {
+        text-transform: uppercase;
+      }
+
+    }
+  }
+}

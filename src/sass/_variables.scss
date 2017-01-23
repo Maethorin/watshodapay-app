@@ -1,0 +1,42 @@
+@import "ionic/scss/ionicons/ionicons-variables";
+
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto-Regular-webfont.woff);
+}
+
+$brand-primary: #64b067;
+$brand-secondary: #6f530e;
+$brand-success:             #4CAF50;
+$brand-info:                #00BCD4;
+$brand-warning:             #FF9800;
+$brand-warning-lighter:     lighten($brand-warning, 35%);
+$brand-danger:              #F44336;
+
+$primary-h2-font-size: 24px;
+$secondary-h2-font-size: $primary-h2-font-size - 4px;
+$base-h3-font-size: $primary-h2-font-size - 10px;
+$button-font-size: $primary-h2-font-size - 4px;
+$title-font-family: roboto, sans-serif;
+
+$page-background-color: #FFFFFF;
+$primary-button-color: $brand-primary;
+$default-button-text-color: #40300f;
+$text-color: #444;
+$assertive: #F99;
+$energized: #9F9;
+$padding-home: 45px;
+$home-content-top: $padding-home + 40px;
+$transparent-background: rgba(255, 255, 255, 0.09);
+
+$topbar-shadow-top: 43px;
+
+$darker-green: #006965;
+$dark-red: #DE0000;
+$bright-red: #E4001C;
+$light-cream: #F2F2E9;
+$light-brown: #6B6648;
+
+$min-portrait-tablet-width: 450px;
+$min-landscape-tablet-width: 801px;
+$ionic-large-modal-width: 680px;

@@ -1,0 +1,54 @@
+@media only screen
+and (min-device-width: 315px)
+and (min-device-height: 475px)
+and (orientation : portrait) {
+  $primary-h2-font-size: 19px;
+  $secondary-h2-font-size: $primary-h2-font-size - 4px;
+  $base-h3-font-size: $primary-h2-font-size - 8px;
+  $button-font-size: $primary-h2-font-size - 4px;
+
+  $topbar-shadow-top: 43px;
+
+  $padding-home: 20px;
+  $home-content-top: $padding-home + 25px;
+
+  @import "imports";
+}
+
+@media only screen
+and (min-device-width: 315px)
+and (min-device-height: 563px)
+and (orientation : portrait) {
+  $primary-h2-font-size: 20px;
+  $base-h3-font-size: $primary-h2-font-size - 8px;
+
+  $primary-h2-font-size: 20px;
+  $secondary-h2-font-size: $primary-h2-font-size - 4px;
+  $base-h3-font-size: $primary-h2-font-size - 8px;
+  $button-font-size: $primary-h2-font-size - 4px;
+
+  $padding-home: 35px;
+  $home-content-top: $padding-home + 35px;
+
+  @import "imports";
+}
+
+@media only screen
+and (min-device-width : 370px)
+and (min-device-height: 667px)
+and (orientation : portrait) {
+  @import "imports";
+}
+
+&.platform-cordova:not(.fullscreen) .bar-header.vehicle-show-header-bar:not(.bar-subheader) > * {
+  margin-top: initial;
+}
+
+&.platform-cordova:not(.fullscreen) .bar-header.vehicle-show-header-bar:not(.bar-subheader) {
+  height: 45px;
+}
+
+&.platform-cordova:not(.fullscreen) .vehicle-show-modal ion-content.padding.scroll-content.ionic-scroll.has-header.has-footer {
+  top: 50px;
+}
+

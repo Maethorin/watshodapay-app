@@ -1,0 +1,76 @@
+.menu {
+  .scroll-content {
+    background-color: $brand-secondary;
+
+    .avatar {
+      color: #fff;
+      margin: 25px 30px;
+      margin-bottom: 45px;
+      font-size: 22px;
+      .img {
+        vertical-align: top;
+        display: inline-block;
+        i {
+          font-size: 40px;
+        }
+      }
+      .user-info {
+        display: inline-block;
+        .name {
+          margin-top: 5px;
+        }
+        .account {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .list {
+      margin: 25px 15px;
+
+      .item {
+        background-color: $brand-secondary;
+        color: #fff;
+        border-bottom: none;
+        font-size: 18px;
+        .item-content {
+          background: none;
+          padding: 0 49px 16px 16px;
+        }
+        i {
+          font-size: 25px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  .bar-footer {
+    padding: 0;
+    .company-footer {
+      color: #fff;
+      background-color: $brand-secondary;
+      font-size: 11px;
+      width: 100%;
+      text-align: center;
+      .company-name {
+        font-weight: 700;
+        margin-right: 5px;
+
+        #triangle-bottomright {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-bottom: 10px solid #fff;
+          border-left: 10px solid transparent;
+        }
+      }
+
+      .company-slogan {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+}
+

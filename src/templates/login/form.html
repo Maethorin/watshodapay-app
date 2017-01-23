@@ -1,0 +1,29 @@
+<ion-view class="form-user-view" hide-nav-bar="true">
+  <ion-content class="login-form-page">
+    <div class="header-img">
+      What Should I Pay
+    </div>
+    <form name="formUser" novalidate ng-submit="login()">
+      <section class="user-data">
+        <div class="list list-inset login-inset">
+
+          <label class="item item-input">
+            <input autocomplete="off" autocorrect="off" type="email" ng-model="user.email" name="username" placeholder="Email" />
+            <i class="icon ion-alert-circled error"></i>
+          </label>
+          <label class="item item-input">
+            <input autocomplete="off" autocorrect="off" type="password" ng-model="user.password" name="password" placeholder="Password" />
+            <i class="icon ion-alert-circled error"></i>
+          </label>
+          <button type="submit" class="button btn-primary button-block">
+            enter
+          </button>
+        </div>
+      </section>
+    </form>
+
+    <div class="create-account">
+      <a ui-sref="createUserState">Sign Up</a>
+    </div>
+  </ion-content>
+</ion-view>

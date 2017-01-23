@@ -1,0 +1,8 @@
+{
+  "name": "Watshoudapay",
+  "app_id": "cc58da8c",
+  "documentRoot": "www",
+  "watchPatterns": [
+    "www/**/*"
+  ]
+}

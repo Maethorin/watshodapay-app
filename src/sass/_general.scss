@@ -1,0 +1,217 @@
+.scroll-view.scroll-y {
+  overflow-x: hidden;
+}
+
+.scroll-content {
+  &.with-fixed-bottom-button {
+    margin-bottom: 48px;
+  }
+}
+
+.bar .buttons span.back-text {
+  display: none;
+}
+
+.with-background {
+  .bar-header {
+    background-color: $primary-button-color;
+    img {
+      margin: 0 auto;
+    }
+  }
+}
+
+.bar-header {
+  background-color: $brand-primary;
+  color: #EEE;
+  font-family: $title-font-family;
+  text-transform: uppercase;
+  font-size: $primary-h2-font-size;
+
+  button {
+    color: #EEE;
+  }
+}
+
+.title-image {
+  width: 150px;
+  margin-top: 10px;
+  @media (min-width: $min-portrait-tablet-width) and (orientation: portrait), (min-width: $ionic-large-modal-width) and (orientation: landscape) {
+    width: 200px;
+    margin-top: 10px;
+  }
+}
+
+h2, h3 {
+  color: white;
+  text-transform: uppercase;
+  font-family: $title-font-family;
+  margin: 0;
+  text-align: left;
+  &.subtitle {
+    color: #444;
+  }
+}
+
+h2 {
+  font-size: $primary-h2-font-size;
+  &.subtitle {
+    font-size: $primary-h2-font-size - 4px;
+  }
+}
+
+h3 {
+  margin-top: 10px;
+  font-size: $base-h3-font-size;
+  &.popup-title {
+    color: #333;
+  }
+}
+
+.button {
+  font-family: $title-font-family;
+  font-size: 23px;
+  font-weight: 200;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 3px 12px 2px 12px;
+  min-height: 10px;
+  &.btn-primary {
+    color: #fff;
+    background-color: $brand-secondary;
+  }
+  &.btn-secondary {
+    color: $default-button-text-color;
+    background-color: $primary-button-color;
+  }
+  &.button-block {
+    padding: 10px 5px;
+    line-height: 30px;
+    margin: 15px auto;
+    margin-bottom: 25px;
+  }
+  &.centered {
+    width: 90%;
+  }
+  &.with-bottom-border {
+    border-bottom: 4px solid $darker-green;
+  }
+  &.unconfirmedEmail {
+    margin-bottom: 100px;
+  }
+}
+
+.bar {
+  .button {
+    text-decoration: none;
+    color: $default-button-text-color;
+    &.button-icon {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+      i {
+        margin-left: 3px;
+        float: none;
+        font-size: 22px;
+        vertical-align: sub;
+      }
+    }
+  }
+}
+
+form {
+  input, textarea {
+    &.ng-touched {
+      &.ng-invalid + i.icon.error {
+        display: inline-flex;
+      }
+      &.ng-valid + i.icon.error {
+        display: none;
+      }
+    }
+  }
+
+  .item-select {
+    &.with-full-label {
+      .input-label {
+        z-index: 1;
+        background-color: #FFF;
+        width: 100%;
+        margin-left: -2px;
+        display: table;
+      }
+    }
+    &.without-full-label {
+      .input-label {
+        z-index: -1;
+      }
+    }
+    select {
+      width: 100%;
+      position: absolute;
+      left: 14px;
+      text-indent: inherit;
+      direction: inherit;
+      padding: 0;
+    }
+  }
+
+  i.icon.error {
+    color: $assertive;
+  }
+
+  input + i.icon.error, textarea + i.icon.error, div.numbers + i.icon.error {
+    display: none;
+    margin-right: 5px;
+  }
+}
+
+ion-content, ion-view {
+  background-color: $page-background-color;
+}
+
+ion-side-menu-content {
+  &.menu-animated {
+    box-shadow: -1px 2px 18px rgba(0, 0, 0, 0.2), -15px 0px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.email-confirm {
+  padding: 8px 15px;
+  margin-top: 43px;
+  margin-bottom: 0;
+  background-color: $brand-warning-lighter;
+  border-bottom: 1px solid darken($brand-warning, 20%);
+  color: darken($brand-warning, 20%);
+  i {
+    float: right;
+    font-size: 20px;
+    color: $brand-warning;
+  }
+}
+
+.with-confirm-message {
+  ion-content {
+    &.has-header {
+      top: 0;
+    }
+  }
+}
+
+.address-list {
+  .list {
+    .item {
+      border-bottom: 0;
+      margin: 20px 19px;
+      padding: 20px 15px;
+      background-color: #EFEFE5;
+      border-bottom: 5px solid #D0D2BC;
+      .street {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+}

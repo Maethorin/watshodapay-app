@@ -1,0 +1,10 @@
+@import "ionic/scss/ionic";
+@import "fontawesome/scss/font-awesome";
+
+@import "variables";
+
+.platform-ios {
+  @import "ios-specifics";
+}
+
+@import "imports";

@@ -1,0 +1,22 @@
+<ion-view hide-back-button="true">
+  <ion-content has-bouncing="false">
+    <div class="title">
+      Wat Sho Da Pay!?!
+    </div>
+    <button class="button btn-primary button-block centered" ui-sref="createDebtState">
+      registrar débito
+    </button>
+    <div class="alert alert-expiring" ng-if="user.has_expiring_debts">
+      Você tem débitos vencendo hoje!
+    </div>
+    <button class="button btn-primary button-block centered with-bottom-border" ui-sref="expiringTodayState">
+      vencendo hoje
+    </button>
+    <div class="alert alert-expiring" ng-if="user.has_expired_debts">
+      Você tem débitos vencidos!
+    </div>
+    <button class="button btn-primary button-block centered with-bottom-border" ui-sref="expiredState">
+      vencidos
+    </button>
+  </ion-content>
+</ion-view>

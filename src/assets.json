@@ -1,0 +1,20 @@
+{
+  "css": [
+  ],
+
+  "js": [
+    "lib/lodash/lodash",
+
+    "lib/ionic/release/js/ionic.bundle",
+    "lib/ngCordova/dist/ng-cordova",
+    "lib/angular-resource/angular-resource",
+    "lib/angular-input-masks/angular-input-masks-standalone.min",
+
+    "js/app",
+    "js/controllers/*",
+    "js/services/*",
+    "js/factories/*",
+    "js/resources/*",
+    "js/directives/*"
+  ]
+}
