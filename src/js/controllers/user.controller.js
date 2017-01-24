@@ -11,15 +11,11 @@ angular.module('watshodapay.user', [])
         });
   }])
 
-  .controller('CreateUserController', ['$scope', '$rootScope', '$state', '$ionicPopup', '$ionicLoading', 'AuthService', 'User', 'ErrorsService', function($scope, $rootScope, $state, $ionicPopup, $ionicLoading, AuthService, User, ErrorsService) {
-    $scope.pageTitle = 'Cadastro';
+  .controller('CreateUserController', ['$scope', '$rootScope', '$state', '$ionicPopup', '$ionicLoading', 'AuthService', 'Me', 'ErrorsService', function($scope, $rootScope, $state, $ionicPopup, $ionicLoading, AuthService, Me, ErrorsService) {
     $scope.user = {
       name: null,
-      surname: null,
       password: null,
-      email: null,
-      cpf: null,
-      phone: null
+      email: null
     };
 
     function showAlert(title, message, buttons) {
@@ -53,8 +49,8 @@ angular.module('watshodapay.user', [])
         template: 'Salvando...'
       });
 
-      var user = User.createNew($scope.user);
-      user.$save().then(
+      Me.save(
+        $scope.user,
         function(response) {
           $ionicLoading.hide();
           showAlert(
@@ -65,8 +61,8 @@ angular.module('watshodapay.user', [])
               type: 'button-positive'
             }]
           );
-
           AuthService.update(response.headers['XSRF-TOKEN']);
+          $state.go('homeState');
         },
 
         function(response) {

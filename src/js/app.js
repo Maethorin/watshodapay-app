@@ -47,6 +47,7 @@ var watshodapay = angular.module(
   'watshodapay',
   [
     'ionic',
+    'ionic-datepicker',
     'ui.router',
     'ngResource',
     'ngCordova',

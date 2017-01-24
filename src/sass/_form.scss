@@ -97,7 +97,7 @@ ion-content {
     }
   }
 
-  &.form-user-content {
+  &.form-user-content, &.form-debt-content {
     .list {
       .label {
         padding-left: 10px;
@@ -181,7 +181,7 @@ ion-content {
   }
 }
 
-.form-user-view {
+.form-user-view, .form-debt-view {
   .bar-footer {
     background-color: $brand-primary;
     text-align: center;

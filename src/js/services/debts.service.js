@@ -4,10 +4,23 @@ watshodapayServices.service('DebtsService', ['$q', 'UserDebts', function($q, Use
   this.debts = {};
   this.loaded = false;
 
+  this.saveDebt = function (debt) {
+    var deferred = $q.defer();
+    UserDebts.save(
+      debt,
+      function(response) {
+        deferred.resolve(response);
+      },
+      function(response) {
+        deferred.reject(response);
+      }
+    );
+    return deferred.promise;
+  };
+
   this.getDebt = function(type) {
     var deferred = $q.defer();
     var self = this;
-    console.log(1, self.loaded);
     if (self.loaded) {
       deferred.resolve(this.debts[type]);
     }
@@ -16,7 +29,6 @@ watshodapayServices.service('DebtsService', ['$q', 'UserDebts', function($q, Use
         function(debts) {
           self.debts = debts;
           self.loaded = true;
-          console.log(2, self.loaded);
           deferred.resolve(self.debts[type]);
         },
         function(response) {

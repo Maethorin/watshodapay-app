@@ -9,6 +9,14 @@ angular.module('watshodapay.userDebts', [])
         templateUrl: 'templates/debts/index.html',
         controller: 'DebtsController'
       })
+
+      .state('createDebtState', {
+        cache: false,
+        url: '/debts/create',
+        templateUrl: 'templates/debts/form.html',
+        controller: 'CreateDebtController'
+      })
+
       .state('debtsState.all', {
         cache: false,
         url: '/all',
@@ -71,18 +79,100 @@ angular.module('watshodapay.userDebts', [])
       })
   }])
 
+  .controller('CreateDebtController', ['$scope', '$state', '$ionicLoading', '$ionicPopup', 'ionicDatePicker', 'DebtsService', 'ErrorsService', function($scope, $state, $ionicLoading, $ionicPopup, ionicDatePicker, DebtsService, ErrorsService) {
+    $scope.debt = {
+      description: null,
+      expirationDate: null
+    };
+
+    var ipObj1 = {
+      callback: function(val) {
+        $scope.debt.expirationDate = new Date(val);
+      },
+      closeOnSelect: true,
+      templateType: 'popup'
+    };
+
+    $scope.openDatePicker = function(date) {
+      if (date) {
+        ipObj1.inputDate = date;
+      }
+      ionicDatePicker.openDatePicker(ipObj1);
+    };
+
+    $scope.formatDate = function(date) {
+      return moment(date).format('DD/MM/YYYY');
+    };
+
+    $scope.submitForm = function(form) {
+      if (form.$invalid) {
+        angular.forEach(form.$error, function (field) {
+          angular.forEach(field, function(errorField){
+            errorField.$setDirty();
+          })
+        });
+
+        showAlert(
+          'Dados faltando ou inválidos',
+          'Um ou mais dados obrigatórios não foram preenchidos corretamente. Por favor, corrija e tente novamente.',
+          [{
+            text: 'Ok',
+            type: 'button-negative'
+          }]
+        );
+        return false;
+      }
+
+      $ionicLoading.show({
+        template: 'Salvando...'
+      });
+
+      function showAlert(title, message, buttons) {
+        $ionicPopup.alert({
+          title: title,
+          template: message,
+          buttons: buttons
+        });
+      }
+
+      DebtsService.saveDebt($scope.debt).then(
+        function(response) {
+          $ionicLoading.hide();
+          showAlert(
+            'Débito registrado',
+            'Seu débito foi registrado com sucesso.',
+            [{
+              text: 'Ok',
+              type: 'button-positive'
+            }]
+          );
+          $state.go('debtsState');
+        },
+
+        function(response) {
+          var errors = response.data.errors;
+
+          var message = ErrorsService.userCreation.setErrorMessages(errors);
+
+          $ionicLoading.hide();
+
+          showAlert(
+            'Dados inválidos',
+            message,
+            [{
+              text: 'Ok',
+              type: 'button-negative'
+            }]
+          );
+        }
+      );
+    };
+  }])
+
   .controller('DebtsController', ['$scope', '$ionicLoading', 'DebtsService', function($scope, $ionicLoading, DebtsService) {
-    // $ionicLoading.show({
-    //   template: 'Consultando débitos'
-    // });
-    console.log(1)
-    // DebtsService.getDebt();
-    console.log(2)
-    // $scope.debts = DebtsService.all;
   }])
 
   .controller('AllController', ['$scope', '$ionicLoading', 'DebtsService', function($scope, $ionicLoading, DebtsService) {
-    console.log(3)
     DebtsService.getDebt('all').then(
       function(debts) {
         $scope.debts = debts;

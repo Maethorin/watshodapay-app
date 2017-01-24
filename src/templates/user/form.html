@@ -1,7 +1,7 @@
 <ion-view class="form-user-view" hide-back-button="false">
   <ion-content class="form-user-content" has-bouncing="false">
     <div class="title">
-      {{ pageTitle }}
+      Cadastro
       <span class="message">todos os campos são obrigatórios</span>
     </div>
     <form name="formUser" novalidate ng-submit="submitForm(formUser)">
@@ -13,26 +13,10 @@
             <span class="message error">Preenchimento obrigatório</span>
           </label>
           <label validated>
-            <div class="label">Sobrenome</div>
-            <input autocomplete="off" autocorrect="off" type="text" required ng-model="user.surname" name="surname" />
-            <span class="message error">Preenchimento obrigatório</span>
-          </label>
-          <label validated>
             <div class="label">Email</div>
             <input autocomplete="off" autocorrect="off" type="email" required ng-model="user.email" name="email"/>
             <span ng-show="formUser.email.$error.required" class="message error">Preenchimento obrigatório</span>
             <span ng-show="!formUser.email.$valid && !formUser.email.$error.required" class="message error">Email inválido</span>
-          </label>
-          <label validated>
-            <div class="label">DDD + Celular</div>
-            <input autocomplete="off" autocorrect="off" type="tel" required  ui-br-phone-number ng-model="user.phone" name="phone" ui-br-phone-number />
-            <span class="message error">Preenchimento obrigatório</span>
-          </label>
-          <label validated>
-            <div class="label">CPF</div>
-            <input autocomplete="off" autocorrect="off" type="tel" required ng-model="user.cpf" name="cpf" ui-br-cpf-mask />
-            <span ng-show="formUser.cpf.$error.required" class="message error">Preenchimento obrigatório</span>
-            <span ng-show="formUser.cpf.$error.cpf" class="message error">CPF inválido</span>
           </label>
           <label validated>
             <div class="label">Senha</div>

@@ -1,0 +1,38 @@
+<ion-view class="form-debt-view" hide-back-button="false">
+  <ion-content class="form-debt-content" has-bouncing="false">
+    <div class="title">
+      Registrar débito
+      <span class="message">* campos obrigatórios</span>
+    </div>
+    <form name="formDebt" novalidate ng-submit="submitForm(formDebt)">
+      <section class="debt-data">
+        <div class="list list-inset">
+          <label validated>
+            <div class="label">Descrição *</div>
+            <input autocomplete="off" autocorrect="off" type="text" required ng-model="debt.description" name="description" />
+            <span class="message error">Preenchimento obrigatório</span>
+          </label>
+          <label validated>
+            <div class="label">Vencimento *</div>
+            <input type="text" readonly required ng-model="debt.expirationDate" name="expirationDate" id="expirationDate" ng-click="openDatePicker(debt.expirationDate)" format-date />
+            <span class="message error">Preenchimento obrigatório</span>
+          </label>
+          <label>
+            <div class="label">Valor</div>
+            <input type="text" ng-model="debt.value" name="value" id="value" />
+          </label>
+          <label>
+            <div class="label">Informações para pagamento</div>
+            <input type="text" ng-model="debt.paymentInfo" name="paymentInfo" id="paymentInfo" />
+          </label>
+          <label>
+            <ion-toggle ng-model="debt.isPayed" toggle-class="toggle-calm">Está pago?</ion-toggle>
+          </label>
+        </div>
+      </section>
+      <button type="submit" class="button btn-primary button-block centered with-bottom-border">
+        enviar
+      </button>
+    </form>
+  </ion-content>
+</ion-view>
