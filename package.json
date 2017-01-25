@@ -4,7 +4,6 @@
   "description": "WatShoudaPay App",
   "dependencies": {
     "bower": "^1.8.0",
-    "lodash": "^4.17.0",
     "connect-livereload": "^0.6.0",
     "del": "~2.2.2",
     "event-stream": "^3.3.2",
@@ -20,7 +19,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.1",
     "gulp-watch-sequence": "^1.0.0",
-    "node-sass": "^4.3.0",
+    "lodash": "^4.17.0",
     "open": "^0.0.5",
     "run-sequence": "^1.2.2",
     "shelljs": "^0.7.6",
