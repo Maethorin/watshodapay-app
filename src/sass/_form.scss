@@ -99,16 +99,12 @@ ion-content {
 
   &.form-user-content, &.form-debt-content {
     .list {
-      .label {
-        padding-left: 10px;
-      }
       label {
-
         input, textarea {
           width: 95%;
           margin: 0 auto;
           border-bottom: 1px solid #EDEDED;
-          margin-bottom: 40px;
+          margin-bottom: 30px;
           text-overflow: ellipsis;
           white-space: nowrap;
           overflow: hidden;
@@ -145,23 +141,6 @@ ion-content {
           display: none;
           margin-right: 5px;
         }
-      }
-    }
-  }
-
-  .list {
-    .label {
-      padding-left: 15px;
-      color: #8D4120;
-      font-size: 15px;
-    }
-    .item {
-      border: none;
-      border-bottom: 2px solid #EDEDED;
-      margin-bottom: 10px;
-      padding-top: 2px;
-      i.icon.error {
-        color: $dark-red;
       }
     }
   }

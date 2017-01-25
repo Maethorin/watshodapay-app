@@ -13,9 +13,15 @@
             <span class="message error">Preenchimento obrigatório</span>
           </label>
           <label validated>
-            <div class="label">Vencimento *</div>
-            <input type="text" readonly required ng-model="debt.expirationDate" name="expirationDate" id="expirationDate" ng-click="openDatePicker(debt.expirationDate)" format-date />
-            <span class="message error">Preenchimento obrigatório</span>
+            <div class="label">Dia do Vencimento *</div>
+            <input type="number" min="1" max="31" required ng-model="debt.expirationDay" name="expirationDay" id="expirationDay" size="2" />
+            <span ng-show="formDebt.expirationDay.$error.required" class="message error">Preenchimento obrigatório</span>
+            <span ng-show="!formDebt.expirationDay.$valid && !formDebt.expirationDay.$error.required" class="message error">Dia inválido</span>
+          </label>
+          <ion-toggle ng-model="isRecurrent" toggle-class="toggle-calm">É recorrente?</ion-toggle>
+          <label ng-show="!isRecurrent">
+            <div class="label">Quantidade</div>
+            <input type="number" ng-model="debt.quantity" name="quantity" id="quantity" />
           </label>
           <label>
             <div class="label">Valor</div>
@@ -25,9 +31,7 @@
             <div class="label">Informações para pagamento</div>
             <input type="text" ng-model="debt.paymentInfo" name="paymentInfo" id="paymentInfo" />
           </label>
-          <label>
-            <ion-toggle ng-model="debt.isPayed" toggle-class="toggle-calm">Está pago?</ion-toggle>
-          </label>
+          <ion-toggle ng-model="debt.isPayed" toggle-class="toggle-calm">Está pago?</ion-toggle>
         </div>
       </section>
       <button type="submit" class="button btn-primary button-block centered with-bottom-border">

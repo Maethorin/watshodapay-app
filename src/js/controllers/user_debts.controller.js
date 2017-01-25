@@ -79,11 +79,8 @@ angular.module('watshodapay.userDebts', [])
       })
   }])
 
-  .controller('CreateDebtController', ['$scope', '$state', '$ionicLoading', '$ionicPopup', 'ionicDatePicker', 'DebtsService', 'ErrorsService', function($scope, $state, $ionicLoading, $ionicPopup, ionicDatePicker, DebtsService, ErrorsService) {
-    $scope.debt = {
-      description: null,
-      expirationDate: null
-    };
+  .controller('CreateDebtController', ['$scope', '$state', '$ionicLoading', '$ionicPopup', 'DebtsService', 'ErrorsService', function($scope, $state, $ionicLoading, $ionicPopup, DebtsService, ErrorsService) {
+    $scope.debt = {};
 
     var ipObj1 = {
       callback: function(val) {
@@ -91,17 +88,6 @@ angular.module('watshodapay.userDebts', [])
       },
       closeOnSelect: true,
       templateType: 'popup'
-    };
-
-    $scope.openDatePicker = function(date) {
-      if (date) {
-        ipObj1.inputDate = date;
-      }
-      ionicDatePicker.openDatePicker(ipObj1);
-    };
-
-    $scope.formatDate = function(date) {
-      return moment(date).format('DD/MM/YYYY');
     };
 
     $scope.submitForm = function(form) {

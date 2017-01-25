@@ -4,13 +4,11 @@
 
   "js": [
     "lib/lodash/lodash",
-    "lib/moment/min/moment-with-locales",
 
     "lib/ionic/release/js/ionic.bundle",
     "lib/ngCordova/dist/ng-cordova",
     "lib/angular-resource/angular-resource",
     "lib/angular-input-masks/angular-input-masks-standalone.min",
-    "lib/ionic-datepicker/dist/ionic-datepicker.bundle.min",
 
     "js/app",
     "js/controllers/*",
