@@ -1,4 +1,4 @@
 {
   "env": "sandbox",
-  "backendURL": "https://whatshoudapay-api-sandbox.herokuapp.com/api/v1"
+  "backendURL": "https://watshodapay-api-sandbox.herokuapp.com"
 }
