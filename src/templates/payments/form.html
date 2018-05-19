@@ -1,0 +1,63 @@
+<ion-view class="form-payment-view" hide-back-button="false">
+  <ion-content class="form-payment-content" has-bouncing="false">
+    <div class="title">
+      Criar pagamento
+      <span class="message">* campos obrigatórios</span>
+    </div>
+    <form name="formPayment" novalidate ng-submit="submitForm(formPayment)">
+      <section class="payment-data">
+        <div class="list list-inset">
+          <label validated>
+            <div class="label">Descrição *</div>
+            <input autocomplete="off" autocorrect="off" type="text" required ng-model="payment.debt.description" name="description" />
+            <span class="message error">Preenchimento obrigatório</span>
+          </label>
+          <label validated>
+            <div class="label">Dia do Vencimento *</div>
+            <input type="number" min="1" max="31" required ng-model="payment.debt.expirationDay" name="expirationDay" id="expirationDay" size="2" />
+            <span ng-show="formPayment.expirationDay.$error.required" class="message error">Preenchimento obrigatório</span>
+            <span ng-show="!formPayment.expirationDay.$valid && !formPayment.expirationDay.$error.required" class="message error">Dia inválido</span>
+          </label>
+          <label class="item item-input item-select" validated>
+            <div class="input-label">
+              Mês *
+            </div>
+            <select name="paymentMonth" id="paymentMonth" required ng-model="payment.month">
+              <option value="">-- selecione o mês --</option>
+              <option ng-repeat="month in months" value="{{month.number}}" ng-bind="month.name"></option>
+            </select>
+            <span ng-show="formPayment.paymentMonth.$error.required" class="message error">Preenchimento obrigatório</span>
+          </label>
+          <label class="item item-input item-select" validated>
+            <div class="input-label">
+              Ano *
+            </div>
+            <select name="paymentYear" id="paymentYear" required ng-model="payment.year">
+              <option value="">-- selecione o ano --</option>
+              <option ng-repeat="year in years" value="{{year}}" ng-bind="year"></option>
+            </select>
+            <span ng-show="formPayment.paymentYear.$error.required" class="message error">Preenchimento obrigatório</span>
+          </label>
+          <ion-toggle ng-model="payment.isRecurrent" toggle-class="toggle-calm">É recorrente?</ion-toggle>
+          <label ng-show="!payment.isRecurrent" validated>
+            <div class="label">Quantidade</div>
+            <input type="text" ui-number-mask="0" min="1" ng-model="payment.debt.quantity" name="quantity" id="quantity" ng-required="!isRecurrent" />
+            <span ng-show="formPayment.quantity.$error.required" class="message error">Preenchimento obrigatório</span>
+          </label>
+          <label validated>
+            <div class="label">Valor</div>
+            <input type="text" ng-model="payment.value" name="value" id="value" ui-money-mask required />
+            <span ng-show="formPayment.value.$error.required" class="message error">Preenchimento obrigatório</span>
+          </label>
+          <label>
+            <div class="label">Informações para pagamento</div>
+            <input type="text" ng-model="payment.paymentInfo" name="paymentInfo" id="paymentInfo" />
+          </label>
+        </div>
+      </section>
+      <button type="submit" class="button btn-primary button-block centered with-bottom-border">
+        enviar
+      </button>
+    </form>
+  </ion-content>
+</ion-view>

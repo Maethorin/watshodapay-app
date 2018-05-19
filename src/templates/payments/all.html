@@ -1,0 +1,18 @@
+<ion-view view-title="Pagamentos">
+  <ion-content class="padding" has-bouncing="false">
+    <ion-list>
+      <ion-item ng-if="payments.length == 0">
+        <p>
+          Você ainda não tem pagamentos cadastrados.
+        </p>
+        <p>
+          Crie um novo com o botão abaixo
+        </p>
+        <button class="button btn-primary button-block centered" ui-sref="createPaymentState">
+          criar pagamento
+        </button>
+      </ion-item>
+      <ion-item ng-repeat="payment in payments" ng-include="'templates/payments/payment-include.html'"></ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

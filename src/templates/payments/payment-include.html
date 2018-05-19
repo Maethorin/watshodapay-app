@@ -1,0 +1,14 @@
+<div class="line">
+  <div class="description" ng-bind="payment.debt.description"></div>
+  <div class="date {{ payment.status }}" ng-bind="payment.date"></div>
+</div>
+<div class="line">
+  <div class="status {{ payment.status }}" ng-switch="payment.status">
+    <i class="fa fa-exclamation-circle" ng-switch-when="expired"></i>
+    <i class="fa fa-bell-o" ng-switch-when="today"></i>
+    <i class="fa fa-hourglass-half" ng-switch-when="tomorrow"></i>
+    <i class="fa fa-calendar-check-o" ng-switch-when="opened"></i>
+    <i class="fa fa-check-circle-o" ng-switch-when="payed"></i>
+  </div>
+  <div class="value" ng-bind="payment.value.asCurrency()"></div>
+</div>

@@ -1,0 +1,63 @@
+.all-payments-tabs {
+  i {
+    &.icon {
+      &.fa {
+        padding-top: 6px;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+ion-item {
+  .expired {
+    color: #862718;
+  }
+  .today {
+    color: #af6507;
+  }
+  .tomorrow {
+    color: #9c9400;
+  }
+  .opened {
+    color: #283184;
+  }
+  .payed {
+    color: #0e5a25;
+  }
+  .line {
+    clear: both;
+    font-size: 14px;
+    color: #545151;
+    display: block;
+    .description {
+      float: left;
+    }
+    .date, .value {
+      float: right;
+    }
+    .value {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    .status {
+      float: left;
+      margin-top: 8px;
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.form-payment-content {
+  .btn-expiration {
+    padding: 10px 5px;
+    line-height: 30px;
+    margin: 15px auto;
+    margin-bottom: 25px;
+    width: 98%;
+    display: block;
+    clear: both;
+  }
+}

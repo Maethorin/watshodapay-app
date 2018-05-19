@@ -3,7 +3,7 @@ watshodapayDirectives.directive('validated', [function() {
         restrict: 'AEC',
         require: '^form',
         link: function(scope, element, attrs, form) {
-          angular.forEach(element[0].querySelectorAll("input, textarea"), function(input) {
+          angular.forEach(element[0].querySelectorAll("input, textarea, select"), function(input) {
             var attributes = input.attributes;
             var field = form[attributes.name.value];
             if (field) {

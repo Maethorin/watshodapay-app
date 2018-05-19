@@ -59,7 +59,8 @@ var watshodapay = angular.module(
     'watshodapay.home',
     'watshodapay.menu',
     'watshodapay.user',
-    'watshodapay.userDebts'
+    'watshodapay.userDebts',
+    'watshodapay.userPayments'
   ]
 );
 
