@@ -13,7 +13,7 @@ angular.module('watshodapay.login', [])
   .controller('LoginController', ['$scope', '$rootScope', '$state', '$ionicPopup', '$ionicLoading', '$ionicHistory', 'Login', 'AuthService', function($scope, $rootScope, $state, $ionicPopup, $ionicLoading, $ionicHistory, Login, AuthService) {
     $ionicLoading.hide();
     $scope.user = {
-      email: null,
+      username: null,
       password: null
     };
 
@@ -29,7 +29,7 @@ angular.module('watshodapay.login', [])
     }
 
     $scope.login = function() {
-      if (!$scope.user.email || !$scope.user.password) {
+      if (!$scope.user.username || !$scope.user.password) {
         showErrorPopUp();
         return false;
       }

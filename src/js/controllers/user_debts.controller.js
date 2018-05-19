@@ -82,14 +82,6 @@ angular.module('watshodapay.userDebts', [])
   .controller('CreateDebtController', ['$scope', '$state', '$ionicLoading', '$ionicPopup', 'DebtsService', 'ErrorsService', function($scope, $state, $ionicLoading, $ionicPopup, DebtsService, ErrorsService) {
     $scope.debt = {};
 
-    var ipObj1 = {
-      callback: function(val) {
-        $scope.debt.expirationDate = new Date(val);
-      },
-      closeOnSelect: true,
-      templateType: 'popup'
-    };
-
     $scope.submitForm = function(form) {
       if (form.$invalid) {
         angular.forEach(form.$error, function (field) {
