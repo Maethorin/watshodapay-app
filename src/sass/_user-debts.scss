@@ -23,7 +23,7 @@ ion-item {
     color: #283184;
   }
   .payed {
-    color: #0e5a25;
+    color: $darker-green;
   }
   .line {
     clear: both;
@@ -32,19 +32,36 @@ ion-item {
     display: block;
     .description {
       float: left;
+      font-size: 18px;
     }
-    .date, .value {
+    .expiration-day, .value {
       float: right;
+      font-size: 14px;
+    }
+    .expiration-day {
+      color: $darker-green;
+      span {
+        display: inline-block;
+        width: 24px;
+        margin-left: -28px;
+        text-align: center;
+        font-size: 14px;
+      }
+      i {
+        font-size: 27px;
+      }
     }
     .value {
+      color: $dark-red;
       margin-top: 10px;
       font-size: 18px;
     }
-    .status {
+    .is-recurrent {
       float: left;
       margin-top: 8px;
+      font-size: 16px;
       i {
-        font-size: 24px;
+        font-size: 14px;
       }
     }
   }

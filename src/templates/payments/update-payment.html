@@ -1,0 +1,7 @@
+<ion-toggle ng-model="selectedPayment.isPayed" toggle-class="toggle-calm">Está pago?</ion-toggle>
+<label class="item item-input">
+  <input type="text" class="text-right" placeholder="Valor" ng-model="selectedPayment.value" name="value" id="value" ui-money-mask />
+</label>
+<label class="item item-input">
+  <textarea ng-model="selectedPayment.paymentInfo" placeholder="Informações adicionais" name="paymentInfo" id="paymentInfo" rows="4"></textarea>
+</label>

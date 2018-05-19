@@ -1,22 +1,37 @@
-<ion-view hide-back-button="true" title="Wat Sho Da Pay!?!">
-    <ion-tabs class="all-debts-tabs tabs-stable tabs-icon-top tabs-striped tabs-top">
-      <ion-tab title="Todos" icon="fa fa-file-text-o" ui-sref="debtsState.all">
-        <ion-nav-view name="tabAll"></ion-nav-view>
-      </ion-tab>
-      <ion-tab title="Vencidos" icon="fa fa-exclamation-circle" ui-sref="debtsState.expired">
-        <ion-nav-view name="tabExpired"></ion-nav-view>
-      </ion-tab>
-      <ion-tab title="Hoje" icon="fa fa-bell-o" ui-sref="debtsState.today">
-        <ion-nav-view name="tabToday"></ion-nav-view>
-      </ion-tab>
-      <ion-tab title="Amanhã" icon="fa fa-hourglass-half" ui-sref="debtsState.tomorrow">
-        <ion-nav-view name="tabTomorrow"></ion-nav-view>
-      </ion-tab>
-      <ion-tab title="Abertos" icon="fa fa-calendar-check-o" ui-sref="debtsState.opened">
-        <ion-nav-view name="tabOpened"></ion-nav-view>
-      </ion-tab>
-      <ion-tab title="Pagos" icon="fa fa-check-circle-o" ui-sref="debtsState.payed">
-        <ion-nav-view name="tabPayed"></ion-nav-view>
-      </ion-tab>
-    </ion-tabs>
+<ion-view view-title="débitos">
+  <ion-floating-button click="createDebt()" has-footer="false" button-color="#2AC9AA" icon="ion-plus" icon-color="#fff">
+  </ion-floating-button>
+
+  <ion-content class="padding" has-bouncing="false">
+    <ion-list>
+      <ion-item ng-if="debts.length == 0">
+        <p>
+          Você ainda não tem débitos cadastrados.
+        </p>
+        <p>
+          Crie um novo com o botão abaixo
+        </p>
+        <button class="button btn-primary button-block centered" ui-sref="createDebtState">
+          registrar débito
+        </button>
+      </ion-item>
+      <ion-item ng-repeat="debt in debts">
+        <div class="line">
+          <div class="description" ng-bind="debt.description"></div>
+          <div class="expiration-day">
+            <i class="fa fa-calendar-o"></i>
+            <span ng-bind="debt.expirationDay"></span>
+          </div>
+        </div>
+        <div class="line">
+          <div class="is-recurrent" ng-switch="debt.isRecurrent">
+            <i class="fa fa-repeat" ng-switch-when="true"></i>
+            <i class="fa fa-hashtag" ng-switch-when="false"></i>
+            <span ng-bind="debt.isRecurrent ? 'is recurrent' : debt.quantity"></span>
+          </div>
+          <div class="value" ng-bind="debt.value.asCurrency()"></div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
 </ion-view>

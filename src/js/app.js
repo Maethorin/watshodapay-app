@@ -51,6 +51,7 @@ var watshodapay = angular.module(
     'ngResource',
     'ngCordova',
     'ui.utils.masks',
+    'ion-floating-menu',
     'watshodapay.services',
     'watshodapay.factories',
     'watshodapay.resources',

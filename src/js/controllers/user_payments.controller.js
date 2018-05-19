@@ -181,13 +181,22 @@ angular.module('watshodapay.userPayments', [])
   .controller('PaymentsController', ['$scope', '$ionicLoading', 'PaymentsService', function($scope, $ionicLoading, PaymentsService) {
   }])
 
-  .controller('AllPaymentsController', ['$scope', '$ionicLoading', 'PaymentsService', function($scope, $ionicLoading, PaymentsService) {
+  .controller('AllPaymentsController', ['$scope', '$state', '$ionicLoading', '$ionicPopup', '$ionicModal', 'PaymentsService', function($scope, $state, $ionicLoading, $ionicPopup, $ionicModal, PaymentsService) {
     $scope.type = 'all';
+
     PaymentsService.getPayment(true).then(
       function(payments) {
         $scope.payments = payments;
       }
     );
+
+    $scope.selectPayment = function(payment) {
+      PaymentsService.selectPayment(payment, $scope);
+    };
+
+    $scope.createPayment = function() {
+      $state.go('createPaymentState');
+    }
   }])
 
   .controller('ExpiredController', ['$scope', '$ionicLoading', 'PaymentsService', function($scope, $ionicLoading, PaymentsService) {
@@ -197,6 +206,10 @@ angular.module('watshodapay.userPayments', [])
         $scope.payments = payments;
       }
     );
+
+    $scope.selectPayment = function(payment) {
+      PaymentsService.selectPayment(payment, $scope);
+    };
   }])
 
   .controller('TodayController', ['$scope', '$ionicLoading', 'PaymentsService', function($scope, $ionicLoading, PaymentsService) {
@@ -206,6 +219,10 @@ angular.module('watshodapay.userPayments', [])
         $scope.payments = payments;
       }
     );
+
+    $scope.selectPayment = function(payment) {
+      PaymentsService.selectPayment(payment, $scope);
+    };
   }])
 
   .controller('TomorrowController', ['$scope', '$ionicLoading', 'PaymentsService', function($scope, $ionicLoading, PaymentsService) {
@@ -215,6 +232,10 @@ angular.module('watshodapay.userPayments', [])
         $scope.payments = payments;
       }
     );
+
+    $scope.selectPayment = function(payment) {
+      PaymentsService.selectPayment(payment, $scope);
+    };
   }])
 
   .controller('OpenedController', ['$scope', '$ionicLoading', 'PaymentsService', function($scope, $ionicLoading, PaymentsService) {
@@ -224,6 +245,10 @@ angular.module('watshodapay.userPayments', [])
         $scope.payments = payments;
       }
     );
+
+    $scope.selectPayment = function(payment) {
+      PaymentsService.selectPayment(payment, $scope);
+    };
   }])
 
   .controller('PayedController', ['$scope', '$ionicLoading', 'PaymentsService', function($scope, $ionicLoading, PaymentsService) {
@@ -233,4 +258,8 @@ angular.module('watshodapay.userPayments', [])
         $scope.payments = payments;
       }
     );
+
+    $scope.selectPayment = function(payment) {
+      PaymentsService.selectPayment(payment, $scope);
+    };
   }]);

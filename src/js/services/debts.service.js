@@ -18,18 +18,18 @@ watshodapayServices.service('DebtsService', ['$q', 'UserDebts', function($q, Use
     return deferred.promise;
   };
 
-  this.getDebt = function(type) {
+  this.getDebt = function() {
     var deferred = $q.defer();
     var self = this;
     if (self.loaded) {
-      deferred.resolve(this.debts[type]);
+      deferred.resolve(this.debts);
     }
     else {
-      UserDebts.get(
+      UserDebts.query(
         function(debts) {
           self.debts = debts;
           self.loaded = true;
-          deferred.resolve(self.debts[type]);
+          deferred.resolve(self.debts);
         },
         function(response) {
           self.loaded = false;

@@ -1,4 +1,7 @@
 <ion-view view-title="Pagamentos">
+  <ion-floating-button click="createPayment()" has-footer="false" button-color="#2AC9AA" icon="ion-plus" icon-color="#fff">
+  </ion-floating-button>
+
   <ion-content class="padding" has-bouncing="false">
     <ion-list>
       <ion-item ng-if="payments.length == 0">
@@ -12,7 +15,7 @@
           criar pagamento
         </button>
       </ion-item>
-      <ion-item ng-repeat="payment in payments" ng-include="'templates/payments/payment-include.html'"></ion-item>
+      <ion-item ng-repeat="payment in payments" ng-click="selectPayment(payment)" ng-include="'templates/payments/payment-include.html'"></ion-item>
     </ion-list>
   </ion-content>
 </ion-view>

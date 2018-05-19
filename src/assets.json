@@ -1,5 +1,6 @@
 {
   "css": [
+    "lib/ion-floating-menu/dist/ion-floating-menu"
   ],
 
   "js": [
@@ -9,6 +10,7 @@
     "lib/ngCordova/dist/ng-cordova",
     "lib/angular-resource/angular-resource",
     "lib/angular-input-masks/angular-input-masks-standalone.min",
+    "lib/ion-floating-menu/dist/ion-floating-menu",
 
     "js/app",
     "js/controllers/*",

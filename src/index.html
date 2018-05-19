@@ -29,23 +29,20 @@
       </div>
 
       <ion-list>
-        <ion-item menu-close ui-sref="createDebtState">
-          <i class="ion-flame"></i> Criar débito
-        </ion-item>
-        <ion-item menu-close ui-sref="createPaymentState">
-          <i class="ion-coin"></i> Criar pagamento
-        </ion-item>
-        <ion-item menu-close ui-sref="debtsState.today">
-          <i class="icon ion-ios-paper"></i> Vencendo Hoje
-        </ion-item>
-        <ion-item menu-close ui-sref="debtsState.tomorrow">
-          <i class="icon ion-ios-paper"></i> Vencendo Amanhã
-        </ion-item>
-        <ion-item menu-close ui-sref="debtsState.expired">
-          <i class="icon ion-ios-paper"></i> Vencidos
-        </ion-item>
         <ion-item menu-close ui-sref="debtsState">
-          <i class="icon ion-ios-paper"></i> Todos os Débitos
+          <i class="fa fa-dollar"></i> Débitos
+        </ion-item>
+        <ion-item menu-close ui-sref="paymentsState.all">
+          <i class="fa fa-money"></i> Pagamentos
+        </ion-item>
+        <ion-item menu-close ui-sref="paymentsState.today">
+          <i class="fa fa-bell-o"></i> Vencendo Hoje
+        </ion-item>
+        <ion-item menu-close ui-sref="paymentsState.tomorrow">
+          <i class="fa fa-hourglass-half"></i> Vencendo Amanhã
+        </ion-item>
+        <ion-item menu-close ui-sref="paymentsState.expired">
+          <i class="fa fa-exclamation-circle"></i> Vencidos
         </ion-item>
         <ion-item menu-close ng-click="logout()">
           <i class="icon ion-log-out"></i> Sair

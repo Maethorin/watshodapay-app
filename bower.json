@@ -2,12 +2,13 @@
   "name": "watshodapay",
   "dependencies": {
     "lodash": "^4.11.2",
-    "fontawesome": "^4.5.0",
+    "fontawesome": "^4.7.0",
     "ionic": "1.2.4",
     "angular-mocks": "1.4.3",
     "angular-resource": "1.4.3",
     "ngCordova": "^0.1.26",
-    "angular-input-masks": "^2.4.0"
+    "angular-input-masks": "^2.4.0",
+    "ion-floating-menu": "^1.0.6"
   },
   "resolutions": {
     "angular": "1.4.3"
