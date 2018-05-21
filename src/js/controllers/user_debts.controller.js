@@ -92,4 +92,8 @@ angular.module('watshodapay.userDebts', [])
         $scope.debts = debts;
       }
     );
+
+    $scope.selectDebt = function(debt) {
+      DebtsService.selectDebt(debt, $scope);
+    };
   }]);

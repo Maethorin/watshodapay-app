@@ -3,7 +3,7 @@
 watshodapayServices.service('PaymentsService', ['$q', '$ionicPopup', 'UserPayments', function($q, $ionicPopup, UserPayments) {
   var self = this;
 
-  this.payments = {};
+  this.payments = [];
   this.loaded = false;
 
   this.savePayment = function(payment) {

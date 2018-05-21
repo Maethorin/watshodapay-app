@@ -15,7 +15,7 @@
           registrar débito
         </button>
       </ion-item>
-      <ion-item ng-repeat="debt in debts">
+      <ion-item ng-repeat="debt in debts" ng-click="selectDebt(debt)">
         <div class="line">
           <div class="description" ng-bind="debt.description"></div>
           <div class="expiration-day">
